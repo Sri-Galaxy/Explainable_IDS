@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent IDS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Intelligent Intrusion Detection System</h1>
+        <p class="subtitle">Upload a CSV file with network traffic features for analysis</p>
+        
+        <div class="upload-section">
+            <form id="upload-form" method="POST" action="/predict" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="data_file">📁 Select CSV File:</label>
+                    <input type="file" id="data_file" name="data_file" accept=".csv" required>
+                    <small>Maximum file size: 5MB | Maximum rows: 100</small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">📊 Analyze</button>
+            </form>
+            
+            <div id="loading" style="display: none;" class="loading-state">
+                <p>⏳ Processing your file...</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+</body>
+</html>

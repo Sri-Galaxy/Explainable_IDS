@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Intelligent IDS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Analysis Results</h1>
+        <p>Processed <strong>{{ results|length }}</strong> record(s)</p>
+        
+        {% for result in results %}
+        <div class="result-card">
+            <div class="result-header">
+                <h2>Record {{ loop.index }}</h2>
+                <span class="badge {% if result.prediction == 1 %}badge-attack{% else %}badge-normal{% endif %}">
+                    {% if result.prediction == 1 %}⚠️ ATTACK{% else %}✅ NORMAL{% endif %}
+                </span>
+            </div>
+            
+            <div class="confidence-section">
+                <strong>Confidence Score:</strong>
+                <div class="progress-bar">
+                    <div class="progress" style="width: {{ result.confidence }}%"></div>
+                </div>
+                <span class="confidence-text">{{ "%.2f"|format(result.confidence) }}%</span>
+            </div>
+            
+            <div class="shap-section">
+                <h3>🔑 Top Contributing Features (SHAP)</h3>
+                <ul class="feature-list">
+                    {% for feature, value in result.shap_values %}
+                    <li><strong>{{ feature }}</strong>: {{ "%.3f"|format(value) }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="ai-summary-section">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p>{{ result.ai_summary }}</p>
+            </div>
+            
+            <details>
+                <summary>📋 View Raw Data</summary>
+                <pre>{{ result.data }}</pre>
+            </details>
+        </div>
+        {% endfor %}
+        
+        <a href="/" class="btn btn-primary">🔄 Analyze Another File</a>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

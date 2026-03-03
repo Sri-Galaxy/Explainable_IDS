@@ -1,0 +1,15 @@
+numpy<2.4
+pandas
+matplotlib
+seaborn
+ipykernel
+scikit-learn
+xgboost
+shap
+Flask
+imbalanced-learn
+joblib
+python-dotenv
+Werkzeug
+requests
+google-genai
