@@ -7,26 +7,45 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>🔍 Intelligent Intrusion Detection System</h1>
-        <p class="subtitle">Upload a CSV file with network traffic features for analysis</p>
-        
-        <div class="upload-section">
-            <form id="upload-form" method="POST" action="/predict" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="data_file">📁 Select CSV File:</label>
-                    <input type="file" id="data_file" name="data_file" accept=".csv" required>
-                    <small>Maximum file size: 5MB | Maximum rows: 100</small>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">📊 Analyze</button>
-            </form>
-            
-            <div id="loading" style="display: none;" class="loading-state">
-                <p>⏳ Processing your file...</p>
+    <header>
+        <div class="brand">Explainable IDS</div>
+        <div class="navbar">
+            <div>Contact</div>
+            <div class="links">
+                <div>Demo</div>
+                <div class="git-hub"><img src="https://cdn-icons-png.flaticon.com/256/25/25231.png" alt="github" width="40"></div>
             </div>
         </div>
-    </div>
+    </header>
+
+    <main>
+        <section class="left-side">
+            <h1>Explainable</h1>
+            <h1>Intrusion Detection System</h1>
+        </section>
+
+        <section class="right-side">
+            <div class="container">
+                <p class="subtitle">Upload a CSV file with network traffic features for analysis</p>
+            
+                <div class="upload-section">
+                    <form id="upload-form" method="POST" action="/predict" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="data_file">📁 Select CSV File:</label>
+                            <input type="file" id="data_file" name="data_file" accept=".csv" required>
+                            <small>Maximum file size: 5MB | Maximum rows: 100</small>
+                        </div>
+            
+                        <button type="submit" class="btn btn-primary">📊 Analyze</button>
+                    </form>
+            
+                    <div id="loading" style="display: none;" class="loading-state">
+                        <p>⏳ Processing your file...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
     <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
 </body>
