@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelligent IDS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <header>
-        <div class="brand">Explainable IDS</div>
+        <div class="brand">X-IDS</div>
         <div class="navbar">
             <div class="contact">Contact</div>
             <div class="links">
@@ -54,6 +55,34 @@
             <img src="{{ url_for('static', filename='images/arch.png') }}" alt="Architecture diagram" width="1000">
         </div>
     </div>
+
+    <footer>
+        <div class="foot-body">
+            <div class="extra-links">
+                <h1>X-IDS</h1>
+                <p>The Explainable intrusion detection System</p><br>
+                <div class="social">
+                    <div><i class="fa-brands fa-github"></i> github</div>
+                    <div><i class="fa-brands fa-instagram"></i> instagram</div>
+                    <div><i class="fa-brands fa-x-twitter"></i> Twitter</div>
+                    <div><i class="fa-brands fa-linkedin"></i> Linkedin</div>
+                </div>
+            </div>
+            
+            <div class="docs">
+                <h3>docs refered</h3>
+                <ul style="list-style: none;">
+                    <li>xg-boost</li>
+                    <li>random forest</li>
+                    <li>shap</li>
+                    <li>google gemini</li>
+                    <li>flask</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">&copy; 2026 Explainable Intrusion Detection System</div>
+    </footer>
     
     <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
 </body>
