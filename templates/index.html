@@ -10,9 +10,9 @@
     <header>
         <div class="brand">Explainable IDS</div>
         <div class="navbar">
-            <div>Contact</div>
+            <div class="contact">Contact</div>
             <div class="links">
-                <div>Demo</div>
+                <div class="demo">Demo</div>
                 <div class="git-hub"><img src="https://cdn-icons-png.flaticon.com/256/25/25231.png" alt="github" width="40"></div>
             </div>
         </div>
@@ -46,6 +46,14 @@
             </div>
         </section>
     </main>
+
+    <div class="architecture">
+        <h1>Architecture</h1><br><br>
+
+        <div class="arch">
+            <img src="{{ url_for('static', filename='images/arch.png') }}" alt="Architecture diagram" width="1000">
+        </div>
+    </div>
     
     <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
 </body>
