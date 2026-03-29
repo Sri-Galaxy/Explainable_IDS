@@ -46,9 +46,9 @@ class AIPrompter:
             - Top contributing features (SHAP values): {top_features_str}
             
             Provide a concise, professional security analysis (2-3 sentences max):
-1. What type of attack this might be
-2. Why these features indicate an attack
-3. Recommended action
+1. possible attack type
+2. Why these features indicate that attack
+3. Recommended actions
             """
 
             response = self.client.models.generate_content(model=Config.GEMINI_MODEL, contents=prompt)
