@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('Intelligent IDS loaded');
-
   // Smooth scroll for details
   const details = document.querySelectorAll('details');
   details.forEach(detail => {
